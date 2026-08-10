@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<suite name="SauceDemoSmokeSuite">
+
+    <test name="SmokeSuiteTests">
+
+        <classes>
+
+            <class name="com.saucedemo.tests.LoginTest">
+                <methods>
+                    <include name="verifyValidLogin"/>
+                </methods>
+            </class>
+
+            <class name="com.saucedemo.tests.InventoryTests">
+                <methods>
+                    <include name="verifyInventoryPageAndAddToCart"/>
+                </methods>
+            </class>
+
+            <class name="com.saucedemo.tests.CartPageTest">
+                <methods>
+                    <include name="verifyCartPageFlow"/>
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
+
+</suite>
