@@ -24,6 +24,12 @@
                     <include name="verifyCartPageFlow"/>
                 </methods>
             </class>
+            
+            <class name="com.saucedemo.tests.CheckOutFlowTest">
+                <methods>
+                    <include name="verifyCheckOutFlowTest"/>
+                </methods>
+            </class>
 
         </classes>
 
