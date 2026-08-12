@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.saucedemo.utils.ConfigReader;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
@@ -15,21 +17,14 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
+      ConfigReader cr= new ConfigReader();
 
-        // Automatically downloads matching ChromeDriver
+        
         WebDriverManager.chromedriver().setup();
-
-        // Launch Chrome browser
-        driver = new ChromeDriver();
-
-        // Maximize browser window
+         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
-        // Implicit wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        // Open SauceDemo application
-        driver.get("https://www.saucedemo.com/");
+        driver.get(cr.getDataFromConfigReader("url"));
     }
 
     @AfterMethod

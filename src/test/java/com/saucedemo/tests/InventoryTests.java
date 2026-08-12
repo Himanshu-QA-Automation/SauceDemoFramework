@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 import com.saucedemo.base.BaseTest;
 import com.saucedemo.pages.InventoryPage;
 import com.saucedemo.pages.LoginPage;
+import com.saucedemo.utils.FrameWorkConstants;
 
 import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 
@@ -25,7 +26,7 @@ public class InventoryTests extends BaseTest {
 		//SoftAssert sa=new SoftAssert();
 		Assert.assertTrue(ip.isInventoryPageDisplayed(), "Inventory page not displayed");
 		Assert.assertEquals(ip.totalProductCount(), 6, "Total number of products are wrong");
-		 Assert.assertEquals(ip.getPageTitleText(), "Products",
+		 Assert.assertEquals(ip.getPageTitleText(), FrameWorkConstants.INVENTORY_PAGE_TITLE,
 	                "Page title mismatch");
 	
 		ip.addBagPackToCart();

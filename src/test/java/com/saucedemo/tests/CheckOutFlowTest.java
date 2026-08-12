@@ -11,6 +11,7 @@ import com.saucedemo.pages.CheckOutPage;
 import com.saucedemo.pages.CheckoutCompletePage;
 import com.saucedemo.pages.InventoryPage;
 import com.saucedemo.pages.LoginPage;
+import com.saucedemo.utils.FrameWorkConstants;
 import com.saucedemo.utils.ScrollUtilityMethods;
 
 public class CheckOutFlowTest extends BaseTest {
@@ -77,7 +78,7 @@ public void verifyCheckOutFlowTest()
 	
 	Reporter.log("CheckOutCompletePage Task Start",true);
 	
-	Assert.assertEquals(ccp.getTextOfPageTitle(), "Checkout: Complete!", "CheckOut Page Title Not Matching");
+	Assert.assertEquals(ccp.getTextOfPageTitle(), FrameWorkConstants.CHECKOUT_COMPLETE_PAGE_TITLE, "CheckOut Page Title Not Matching");
 	
 	Assert.assertEquals(ccp.getTextOfSuccessMsg(), "Thank you for your order!", "CheckOut Success Text Message Not Matching");
 	

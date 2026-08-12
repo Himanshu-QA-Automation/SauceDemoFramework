@@ -8,6 +8,7 @@ import com.saucedemo.base.BaseTest;
 import com.saucedemo.pages.CartPage;
 import com.saucedemo.pages.InventoryPage;
 import com.saucedemo.pages.LoginPage;
+import com.saucedemo.utils.FrameWorkConstants;
 
 public class CartPageTest extends BaseTest{
 
@@ -23,7 +24,7 @@ public class CartPageTest extends BaseTest{
 	
 	CartPage cp= new CartPage(driver);
 	
-	Assert.assertEquals(cp.getCartPageTitle(), "Your Cart", "CartPage Title Not Matching");
+	Assert.assertEquals(cp.getCartPageTitle(), FrameWorkConstants.CART_PAGE_TITLE, "CartPage Title Not Matching");
 	Assert.assertEquals(cp.getProductAddedName(), "Sauce Labs Backpack", "CartPage Title Not Matching");
 	Assert.assertTrue(cp.isRemoveButtonVisible(), "Remove Button Not Visible");
 	Reporter.log("Cart FLOW Check Successfull",true);
