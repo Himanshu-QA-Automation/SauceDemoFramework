@@ -3,6 +3,11 @@
 
 <suite name="SauceDemoSmokeSuite">
 
+  <listeners>
+        <listener class-name="TestListeners.TestListener"/>
+    </listeners>
+
+
     <test name="SmokeSuiteTests">
 
         <classes>

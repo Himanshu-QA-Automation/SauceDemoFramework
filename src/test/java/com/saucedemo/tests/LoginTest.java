@@ -2,12 +2,15 @@ package com.saucedemo.tests;
 
 import org.testng.Assert;
 import org.testng.Reporter;
+
 import org.testng.annotations.Test;
 
 import com.saucedemo.base.BaseTest;
 import com.saucedemo.pages.LoginPage;
 import com.saucedemo.utils.ConfigReader;
 import com.saucedemo.utils.ScreenShotUtility;
+
+
 
 public class LoginTest extends BaseTest{
 	
