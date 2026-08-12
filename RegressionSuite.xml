@@ -3,6 +3,11 @@
 
 <suite name="SauceDemoRegressionSuite">
 
+  <listeners>
+        <listener class-name="TestListeners.TestListener"/>
+    </listeners>
+
+
     <test name="RegressionSuiteTests">
         <classes>
             <class name="com.saucedemo.tests.LoginTest"/>
