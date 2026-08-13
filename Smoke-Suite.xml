@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<suite name="SauceDemoSmokeSuite" parallel="tests" thread-count="2">
 
-<suite name="SauceDemoSmokeSuite">
-
-  <listeners>
+    <listeners>
         <listener class-name="TestListeners.TestListener"/>
     </listeners>
 
+    <!-- Chrome -->
+    <test name="Chrome Smoke Tests">
 
-    <test name="SmokeSuiteTests">
+        <parameter name="browser" value="chrome"/>
 
         <classes>
 
@@ -29,7 +30,7 @@
                     <include name="verifyCartPageFlow"/>
                 </methods>
             </class>
-            
+
             <class name="com.saucedemo.tests.CheckOutFlowTest">
                 <methods>
                     <include name="verifyCheckOutFlowTest"/>
@@ -37,7 +38,41 @@
             </class>
 
         </classes>
+    </test>
 
+
+    <!-- Edge -->
+    <test name="Edge Smoke Tests">
+
+        <parameter name="browser" value="edge"/>
+
+        <classes>
+
+            <class name="com.saucedemo.tests.LoginTest">
+                <methods>
+                    <include name="verifyValidLogin"/>
+                </methods>
+            </class>
+
+            <class name="com.saucedemo.tests.InventoryTests">
+                <methods>
+                    <include name="verifyInventoryPageAndAddToCart"/>
+                </methods>
+            </class>
+
+            <class name="com.saucedemo.tests.CartPageTest">
+                <methods>
+                    <include name="verifyCartPageFlow"/>
+                </methods>
+            </class>
+
+            <class name="com.saucedemo.tests.CheckOutFlowTest">
+                <methods>
+                    <include name="verifyCheckOutFlowTest"/>
+                </methods>
+            </class>
+
+        </classes>
     </test>
 
 </suite>

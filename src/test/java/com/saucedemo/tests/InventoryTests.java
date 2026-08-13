@@ -15,7 +15,7 @@ import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 
 public class InventoryTests extends BaseTest {
 	
-	@Test(priority=3,groups= {"smoke","regression"})
+	@Test(priority=3 , groups= {"smoke","regression"})
 	public void verifyInventoryPageAndAddToCart() {
 		System.out.println("Smoke group detected for inventory");
 		LoginPage lp=new LoginPage(driver);

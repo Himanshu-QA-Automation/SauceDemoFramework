@@ -2,6 +2,7 @@ package TestListeners;
 
 
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -25,12 +26,18 @@ public class TestListener extends BaseTest implements ITestListener {
     public void onTestSuccess(ITestResult result) {
         System.out.println("Test Passed : " + result.getName());
     }
-
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("Test Failed : " + result.getName());
 
-        ScreenShotUtility.captureScreenshot(driver, result.getName());
+        Object testClass = result.getInstance();
+
+        if (testClass instanceof BaseTest) {
+            WebDriver driver = ((BaseTest) testClass).getDriver();
+
+            if (driver != null) {
+                ScreenShotUtility.captureScreenshot(driver, result.getName());
+            }
+        }
     }
     @Override
     public void onFinish(ITestContext context) {

@@ -7,7 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    private WebDriver driver;
+    WebDriver driver;
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     @FindBy(id = "user-name")
     private WebElement username;
@@ -17,37 +22,28 @@ public class LoginPage {
 
     @FindBy(id = "login-button")
     private WebElement loginButton;
-
+    
     @FindBy(xpath = "//h3[@data-test='error']")
     private WebElement errorMessage;
 
-    // Constructor
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-
-        // IMPORTANT: initialize PageFactory with the SAME driver
-        PageFactory.initElements(this.driver, this);
+    public void enterUsername(String uname) {
+        username.sendKeys(uname);
     }
 
-    public void enterUsername(String user) {
-        username.sendKeys(user);
+    public void enterPassword(String pwd) {
+        password.sendKeys(pwd);
     }
 
-    public void enterPassword(String pass) {
-        password.sendKeys(pass);
-    }
-
-    public void clickLogin() {
+    public void clickLoginButton() {
         loginButton.click();
     }
 
-    public void login(String user, String pass) {
-        enterUsername(user);
-        enterPassword(pass);
-        clickLogin();
+    public void login(String uname, String pwd) {
+        enterUsername(uname);
+        enterPassword(pwd);
+        clickLoginButton();
     }
-
+    
     public String getErrorMessage() {
         return errorMessage.getText();
-    }
-}
+}}

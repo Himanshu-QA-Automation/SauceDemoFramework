@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<suite thread-count="1" name="Suite">
-  <test thread-count="1" name="Test">
-    <classes>
-      <class name="com.saucedemo.tests.LoginTest"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->

@@ -15,7 +15,7 @@ import com.saucedemo.utils.FrameWorkConstants;
 import com.saucedemo.utils.ScrollUtilityMethods;
 
 public class CheckOutFlowTest extends BaseTest {
-@Test
+@Test(priority=5 ,groups= {"regression"})
 public void verifyCheckOutFlowTest()
 {
 	LoginPage lp=new LoginPage(driver);

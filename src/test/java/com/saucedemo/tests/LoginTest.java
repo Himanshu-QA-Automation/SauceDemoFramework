@@ -9,6 +9,7 @@ import com.saucedemo.base.BaseTest;
 import com.saucedemo.pages.LoginPage;
 import com.saucedemo.utils.ConfigReader;
 import com.saucedemo.utils.ScreenShotUtility;
+import com.saucedemo.utils.TestDataProvider;
 
 
 
@@ -21,7 +22,7 @@ public class LoginTest extends BaseTest{
 	        LoginPage loginPage = new LoginPage(driver);
 
 	        loginPage.login(cr.getDataFromConfigReader("username"),cr.getDataFromConfigReader("password"));
-	        ScreenShotUtility.captureScreenshot(driver, "LoginSuccess");
+	       // ScreenShotUtility.captureScreenshot(driver, "LoginSuccess");
 	        String currentUrl = driver.getCurrentUrl();
 
 	        Assert.assertTrue(currentUrl.contains("inventory"),
@@ -42,6 +43,18 @@ public class LoginTest extends BaseTest{
 		 
 	 
 	 }
+	 
+
+@Test(dataProvider = "loginDataFromExcel",
+      dataProviderClass = TestDataProvider.class)
+public void loginDataProviderTest(String username, String password) {
+
+    LoginPage lp = new LoginPage(driver);
+
+    lp.login(username, password);
+
+    Reporter.log(username + " : " + password,true);
+}
 	}
 
 

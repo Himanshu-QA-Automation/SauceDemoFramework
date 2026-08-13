@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite thread-count="4" parallel="classes" name="Suite">
+  <test thread-count="4" parallel="classes" name="Test">
+    <classes>
+      <class name="com.saucedemo.tests.CartPageTest"/>
+      <class name="com.saucedemo.tests.InventoryTests"/>
+      <class name="com.saucedemo.tests.LoginTest"/>
+      <class name="com.saucedemo.tests.NewTest"/>
+      <class name="com.saucedemo.tests.CheckOutFlowTest"/>
+    </classes>
+  </test> 
+</suite> 
