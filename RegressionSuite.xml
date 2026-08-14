@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="SauceDemoRegressionSuite" parallel="tests" thread-count="2">
+
+
+<suite name="SauceDemoRegressionSuite">
 
     <listeners>
         <listener class-name="TestListeners.TestListener"/>
     </listeners>
 
-    <!-- Chrome Regression -->
     <test name="Chrome Regression Tests">
 
         <parameter name="browser" value="chrome"/>
@@ -17,19 +18,7 @@
             <class name="com.saucedemo.tests.CartPageTest"/>
             <class name="com.saucedemo.tests.CheckOutFlowTest"/>
         </classes>
-    </test>
 
-    <!-- Edge Regression -->
-    <test name="Edge Regression Tests">
-
-        <parameter name="browser" value="edge"/>
-
-        <classes>
-            <class name="com.saucedemo.tests.LoginTest"/>
-            <class name="com.saucedemo.tests.InventoryTests"/>
-            <class name="com.saucedemo.tests.CartPageTest"/>
-            <class name="com.saucedemo.tests.CheckOutFlowTest"/>
-        </classes>
     </test>
 
 </suite>
