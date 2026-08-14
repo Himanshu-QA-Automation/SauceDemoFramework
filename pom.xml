@@ -52,6 +52,12 @@
     <version>5.4.1</version>
 </dependency>
 
+<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-testng</artifactId>
+    <version>2.29.1</version>
+</dependency>
+
     </dependencies>
     
     <build>
@@ -65,17 +71,22 @@
                 <suiteXmlFiles>
 
                     <!-- Default suite execution from Eclipse / Maven -->
-                    <!-- <suiteXmlFile>Smoke-Suite.xml</suiteXmlFile>
-                    <suiteXmlFile>RegressionSuite.xml</suiteXmlFile>-->
+                    <!-- <suiteXmlFile>Smoke-Suite.xml</suiteXmlFile>-->
+                    <suiteXmlFile>RegressionSuite.xml</suiteXmlFile>
 
                     <!-- For command line execution use this instead -->
-                     <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> 
+                   <!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> --> 
                    <!--  <suiteXmlFile>$RegressionSuite.xml</suiteXmlFile> --> 
 
                 </suiteXmlFiles>
                 <reportsDirectory>target/surefire-reports</reportsDirectory>
             </configuration>
 
+        </plugin>
+        <plugin>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-maven</artifactId>
+    <version>2.17.0</version>
         </plugin>
     </plugins>
 </build>

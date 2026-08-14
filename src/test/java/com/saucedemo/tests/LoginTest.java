@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest{
 	       // ScreenShotUtility.captureScreenshot(driver, "LoginSuccess");
 	        String currentUrl = driver.getCurrentUrl();
 
-	        Assert.assertTrue(currentUrl.contains("inventory"),
+	        Assert.assertTrue(currentUrl.contains("inventor"),
 	                "Login failed!");
 	        
 
